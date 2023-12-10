@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyShop.Views.InicioPage"
+             xmlns:vm="clr-namespace:EasyShop.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:InicioViewModel />
+    </ContentPage.BindingContext>
+
+
+
+    <Grid BackgroundColor="{Binding ColorAcentuacionI}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!-- Bienvenido Label -->
+        <Label x:Name="UsuarioLabel"
+               Grid.Row="0"
+               TextColor="{Binding EtiqBienvenidoI}"
+               FontAttributes="Bold"
+               FontSize="20"
+               HorizontalOptions="Center" />
+        <!-- Texto de Bienvenida -->
+        <Label FontSize="38"
+               Text="{Binding TextoBienvenivoI}"
+               TextColor="{Binding EtiqBienvenidoI}"
+               FontAttributes="Bold"
+               Grid.Row="1"
+               HorizontalOptions="Center" />
+        <!-- Imagen -->
+        <Image Source="EasyShop_FTransparente.png"
+               Grid.Row="2"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+               HeightRequest="400" />
+    </Grid>
+    <!--<StackLayout BackgroundColor="{Binding ColorAcentuacionI}"
+                 VerticalOptions="FillAndExpand"
+                 HorizontalOptions="Fill">
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center">
+            <ContentView Padding="0,10,0,10"
+                         VerticalOptions="FillAndExpand">
+                <Label x:Name="UsuarioLabel"
+                       TextColor="{Binding EtiqBienvenidoI}"
+                       FontAttributes="Bold" FontSize="20" />
+            </ContentView>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center">
+            <ContentView Padding="0,60,0,10"
+                         VerticalOptions="FillAndExpand">
+
+                <Label FontSize="38" Text="{Binding TextoBienvenivoI}" TextColor="{Binding EtiqBienvenidoI}" FontAttributes="Bold"></Label>
+            </ContentView>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center">
+            <ContentView Padding="0,20,0,40"
+                         VerticalOptions="FillAndExpand">
+                <Image Source="EasyShop_FTransparente.png"
+                       VerticalOptions="Center"
+                       HeightRequest="400" />
+            </ContentView>
+        </StackLayout>
+    </StackLayout>-->
+
+</ContentPage>

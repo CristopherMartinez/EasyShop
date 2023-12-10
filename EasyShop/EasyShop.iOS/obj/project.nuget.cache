@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "mnc+6a/gOPwZb1poEoUljywXFJBOX3l1fxLUtU4ZCyh/O+pjcZTr/AFIodlJzYL+zgP/sqZMkjlT8KaLrSExQw==",
+  "success": true,
+  "projectFilePath": "/Users/cristophermartinez/Documents/EasyShop/EasyShop/EasyShop.iOS/EasyShop.iOS.csproj",
+  "expectedPackageFiles": [
+    "/Users/cristophermartinez/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/cristophermartinez/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/cristophermartinez/.nuget/packages/xamarin.essentials/1.8.0/xamarin.essentials.1.8.0.nupkg.sha512",
+    "/Users/cristophermartinez/.nuget/packages/xamarin.forms/5.0.0.2196/xamarin.forms.5.0.0.2196.nupkg.sha512",
+    "/Users/cristophermartinez/.nuget/packages/xamarin.forms.behaviorspack/3.0.0/xamarin.forms.behaviorspack.3.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

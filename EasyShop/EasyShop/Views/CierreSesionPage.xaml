@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyShop.Views.CierreSesionPage"
+             xmlns:vm="clr-namespace:EasyShop.ViewModels"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <vm:CierreSesionViewModel />
+    </ContentPage.BindingContext>
+
+
+
+
+
+
+    <Grid BackgroundColor="{Binding ColorAcentuacionC}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Text="{Binding Etiq_texto3}"
+               FontSize="40"
+               TextColor="{Binding Back_colorR}"
+               FontAttributes="Bold"
+               Margin="0,10,0,0"
+               HorizontalOptions="Center" />
+        <Frame Grid.Row="1"
+               VerticalOptions="Center"
+               Margin="18,-20,18,20"
+               BackgroundColor="{Binding Back_colorR}"
+               CornerRadius="20"
+               HasShadow="False"
+               HorizontalOptions="Center">
+            <StackLayout Padding="42,35,42,0">
+                <!-- Tus otros controles aquí -->
+                <Label x:Name="etiq_bienv"
+                       Text="{Binding TextoCierreC}"
+                       FontSize="20"
+                       TextColor="{Binding Text_color2}"
+                       FontAttributes="Bold"
+                       Margin="0,10,0,0"
+                       HorizontalOptions="Center" />
+                <Label x:Name="etiq_logcomoC"
+                       Text="{Binding EtiqInvitadoC}"
+                       FontSize="25"
+                       TextColor="{Binding Text_color3}"
+                       FontAttributes="Bold"
+                       Margin="-20,-30,-20,0"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       IsVisible="false" />
+                <Image Source="EasyShop_FTransparente.png"
+                       Margin="20"
+                       WidthRequest="135"
+                       HeightRequest="135"
+                       Aspect="AspectFit"></Image>
+                <Frame x:Name="frmfecha"
+                       BorderColor="{Binding Border_color}"
+                       BackgroundColor="{Binding Back_color2}"
+                       CornerRadius="5"
+                       Padding="9">
+                    <Entry Placeholder="Fecha"
+                           PlaceholderColor="{Binding Place_color}"
+                           TextColor="{Binding Text_color3}"
+                           BackgroundColor="{Binding Back_color2}"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           FontSize="19"
+                           IsReadOnly="True"
+                           x:Name="txtfecha" />
+                </Frame>
+                <Frame x:Name="frmhora"
+                       BorderColor="{Binding Border_color}"
+                       BackgroundColor="{Binding Back_color}"
+                       CornerRadius="5"
+                       Padding="5">
+                    <Entry Placeholder="Hora"
+                           PlaceholderColor="{Binding Place_color}"
+                           TextColor="{Binding Text_color3}"
+                           BackgroundColor="{Binding Back_color2}"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           FontSize="19"
+                           IsReadOnly="True"
+                           x:Name="txthora" />
+                </Frame>
+                <Button Text="{Binding TextoCierreC}"
+                        TextColor="{Binding Text_colorC}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Margin="-40,10,-45,0"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_colorC}"
+                        x:Name="btncerrars"
+                        Clicked="BtncerrarSN_Clicked"
+                        IsVisible="true"></Button>
+                <Button Text="{Binding TextoCancelar}"
+                        TextColor="{Binding Text_colorC}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Margin="-40,10,-45,0"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_colorC}"
+                        Clicked="BtncancelarC_Clicked"
+                        x:Name="btncancelar"
+                        IsVisible="true"></Button>
+                <Button Text="{Binding Etiq_texto1}"
+                        TextColor="{Binding Text_colorC}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Margin="-20,10,-20,0"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_colorC}"
+                        x:Name="btnregresarC"
+                        Clicked="BtnregresarC_Clicked"
+                        IsVisible="false"></Button>
+            </StackLayout>
+        </Frame>
+    </Grid>
+
+
+
+
+    <!--<StackLayout BackgroundColor="{Binding ColorAcentuacionC}"
+                 Orientation="Vertical">
+        <Label Text="{Binding Etiq_texto3}"
+               FontSize="40"
+               TextColor="{Binding Text_color}"
+               FontAttributes="Bold"
+               Margin="0,20,0,0"
+               HorizontalOptions="Center" />
+        <Frame VerticalOptions="Center"
+               Margin="20"
+               BackgroundColor="{Binding Back_color2}"
+               CornerRadius="20"
+               HasShadow="False"
+               HorizontalOptions="Center">
+            <StackLayout VerticalOptions="Center">
+                <Label x:Name="etiq_bienv"
+                       Text="{Binding TextoCierreC}"
+                       FontSize="35"
+                       TextColor="{Binding Text_color2}"
+                       FontAttributes="Bold"
+                       Margin="0,20,0,0"
+                       HorizontalOptions="Center" />
+
+                <Label x:Name="etiq_logcomoC"
+                       Text="{Binding EtiqInvitadoC}"
+                       FontSize="25"
+                       TextColor="{Binding Text_color3}"
+                       FontAttributes="Bold"
+                       Margin="0,20,0,0"
+                       HorizontalOptions="Center"
+                       IsVisible="false" />
+
+                <Image Source="EasyShop_FTransparente.png"
+                       Margin="20"
+                       WidthRequest="135"
+                       HeightRequest="135"
+                       Aspect="AspectFit"></Image>
+                <Frame x:Name="frmfecha"
+                       BorderColor="{Binding Border_color}"
+                       BackgroundColor="{Binding Back_color2}"
+                       CornerRadius="5"
+                       Padding="5">
+                    <Entry Placeholder="Fecha"
+                           PlaceholderColor="{Binding Place_color}"
+                           TextColor="{Binding Text_color3}"
+                           BackgroundColor="{Binding Back_color2}"                        
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           FontSize="19"
+                           IsReadOnly="True"
+                           x:Name="txtfecha" />
+                </Frame>
+                <Frame x:Name="frmhora"
+                       BorderColor="{Binding Border_color}"
+                       BackgroundColor="{Binding Back_color}"
+                       CornerRadius="5"
+                       Padding="5">
+                    <Entry Placeholder="Hora"
+                           PlaceholderColor="{Binding Place_color}"
+                           TextColor="{Binding Text_color3}"
+                           BackgroundColor="{Binding Back_color2}"                         
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           FontSize="19"
+                           IsReadOnly="True"
+                           x:Name="txthora" />
+                </Frame>
+                <Button Text="{Binding TextoCierreC}"
+                        TextColor="{Binding Text_colorC}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Margin="0,20,0,0"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_colorC}"
+                        x:Name="btncerrars"
+                        Clicked="BtncerrarSN_Clicked"
+                        IsVisible="true"></Button>
+                <Button Text="{Binding TextoCancelar}"
+                        TextColor="{Binding Text_colorC}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Margin="0,10,0,0"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_colorC}"
+                        Clicked="BtncancelarC_Clicked"
+                        x:Name="btncancelar"                      
+                        IsVisible="true"></Button>
+                <Button Text="{Binding Etiq_texto1}"
+                        TextColor="{Binding Text_colorC}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Margin="0,10,0,0"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_colorC}"
+                        x:Name="btnregresarC"
+                        Clicked="BtnregresarC_Clicked"
+                        IsVisible="false"></Button>
+            </StackLayout>
+        </Frame>
+    </StackLayout>-->
+
+
+</ContentPage>

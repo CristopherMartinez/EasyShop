@@ -1,0 +1,51 @@
+﻿<Properties StartupConfiguration="{6D01BFAC-F04F-4BDB-815E-FD6861D5C067}|Default">
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.pixel_5_-_api_33" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="EasyShop/EasyShop/Views/Productos.xaml.cs">
+    <Files>
+      <File FileName="EasyShop/EasyShop/Views/Herramientas.xaml" />
+      <File FileName="EasyShop/EasyShop/Views/RegistroPage.xaml" />
+      <File FileName="EasyShop/EasyShop/Views/RegistroPage.xaml.cs" />
+      <File FileName="EasyShop/EasyShop/Views/Productos.xaml" Line="17" Column="42" />
+      <File FileName="EasyShop/EasyShop/Views/Productos.xaml.cs" Line="42" Column="66" />
+      <File FileName="EasyShop/EasyShop/Views/SesionLoginPage.xaml.cs" />
+      <File FileName="EasyShop/EasyShop/Views/Juguetes.xaml.cs" />
+      <File FileName="EasyShop/EasyShop/Views/CarritoCompras.xaml.cs" />
+      <File FileName="EasyShop/EasyShop/Views/CierreSesionPage.xaml.cs" />
+      <File FileName="EasyShop/EasyShop/Views/Herramientas.xaml.cs" />
+      <File FileName="EasyShop/EasyShop/Views/ItemDetailPage.xaml.cs" />
+      <File FileName="EasyShop/EasyShop/ViewModels/ProductosViewModel.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="EasyShop" expanded="True">
+            <Node name="EasyShop" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="CarritoCompras.xaml" expanded="True" />
+                <Node name="CierreSesionPage.xaml" expanded="True" />
+                <Node name="Herramientas.xaml" expanded="True" />
+                <Node name="ItemDetailPage.xaml" expanded="True" />
+                <Node name="Juguetes.xaml" expanded="True" />
+                <Node name="Productos.xaml" expanded="True">
+                  <Node name="Productos.xaml.cs" selected="True" />
+                </Node>
+                <Node name="RegistroPage.xaml" expanded="True" />
+                <Node name="SesionLoginPage.xaml" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.ItemProperties.EasyShop.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.90A7E435-CA30-4F52-B333-B07484FA0663" />
+  <MonoDevelop.Ide.ItemProperties.EasyShop.Android PreferredExecutionTarget="Android.pixel_5_-_api_33" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

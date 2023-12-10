@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyShop.Views.SesionLoginPage"
+              xmlns:vm="clr-namespace:EasyShop.ViewModels"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+             >
+    <ContentPage.BindingContext>
+        <vm:SesionLoginViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout BackgroundColor="{Binding ColorAcentuacionR}"
+             Orientation="Vertical">
+        <Label x:Name="UsuarioLabel"
+           TextColor="{Binding Text_color3}"
+           FontAttributes="Bold"
+           FontSize="20"
+           IsVisible="false"/>
+        <Label Text="{Binding Etiq_texto3}"
+           FontSize="40"
+           TextColor="{Binding Text_color}"
+           FontAttributes="Bold"
+           Margin="0,20,0,0"
+           HorizontalOptions="Center" />
+        <Frame VerticalOptions="Center"
+           Margin="20"
+           BackgroundColor="{Binding Back_color2}"
+           CornerRadius="20"
+           HasShadow="False"
+           HorizontalOptions="Center">
+            <StackLayout VerticalOptions="Center">
+                <Label x:Name="etiq_bienv"
+                   Text="{Binding Etiq_texto}"
+                   FontSize="35"
+                   TextColor="{Binding Text_color2}"
+                   FontAttributes="Bold"
+                   Margin="0,20,0,0"
+                   HorizontalOptions="Center"
+                   IsVisible="true" />
+
+                <Image x:Name="imgReg"
+                   Source="EasyShop_FTransparente.png"
+                   Margin="20"
+                   WidthRequest="135"
+                   HeightRequest="135"
+                   Aspect="AspectFit"></Image>
+                <Frame x:Name="frmusuario"
+                   BorderColor="{Binding Border_color}"
+                   BackgroundColor="{Binding Back_color2}"
+                   CornerRadius="5"
+                   Padding="5">
+                    <Entry Placeholder="{Binding Placetxt}"
+                       PlaceholderColor="{Binding Place_color}"
+                       TextColor="{Binding Text_color3}"
+                       BackgroundColor="{Binding Back_color2}"
+                       MaxLength="50"
+                       x:Name="txtusuario"
+                       IsVisible="true" />
+                </Frame>
+                <Frame x:Name="frmcontrasenia"
+                   BorderColor="{Binding Border_color}"
+                   BackgroundColor="{Binding Back_color2}"
+                   CornerRadius="5"
+                   Padding="5">
+                    <Entry IsPassword="True"
+                       Placeholder="Contraseña"
+                       PlaceholderColor="{Binding Place_color}"
+                       TextColor="{Binding Text_color3}"
+                       BackgroundColor="{Binding Back_color2}"
+                       MaxLength="50"
+                       x:Name="txtcontrasenia"
+                       IsVisible="true" />
+                </Frame>
+                <Button Text="{Binding Etiq_texto2}"
+                    TextColor="{Binding Text_color}"
+                    CornerRadius="5"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    Margin="0,20,0,0"
+                    TextTransform="None"
+                    BackgroundColor="{Binding Back_color}"
+                    x:Name="btniniciarsesion"
+                    Clicked="BtniniciarsesionSL_Clicked"
+                    IsVisible="true"></Button>
+                <Button Text="{Binding Etiq_texto4}"
+                    TextColor="{Binding Text_color}"
+                    CornerRadius="5"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    Margin="0,10,0,0"
+                    TextTransform="None"
+                    BackgroundColor="{Binding Back_color}"
+                    x:Name="btncancelar"
+                    Clicked="BtncancelarSL_Clicked"
+                    IsVisible="true"></Button>
+
+
+
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels="clr-namespace:EasyShop.ViewModels"
+             xmlns:Models="clr-namespace:EasyShop.Models"
+             x:Class="EasyShop.Views.Productos"
+             x:DataType="ViewModels:ProductosViewModel"
+             BackgroundColor="#af9eca"
+             Title="Categorías disponibles"
+             x:Name="productosPage"
+             >
+    <ContentPage.Content>
+
+        <CollectionView ItemsSource="{Binding Categorias}">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="1" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="Models:Categoria">
+                    <Grid Padding="15,15,15,0">
+                        <ImageButton Padding="30" Source="{Binding imagen}" BackgroundColor="White" CornerRadius="15"
+                                     Clicked="ImageButton_Clicked" 
+                                     />
+                        <Label Text="{Binding nombre}" TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Title" VerticalOptions="End" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </ContentPage.Content>
+</ContentPage>

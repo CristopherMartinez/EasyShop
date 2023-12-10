@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyShop.Views.RegistroPage"
+             xmlns:vm="clr-namespace:EasyShop.ViewModels"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <vm:RegistroViewModel />
+    </ContentPage.BindingContext>
+
+
+    <Grid BackgroundColor="{Binding ColorAcentuacionR}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!-- Título -->
+        <Label Text="{Binding Etiq_texto3}"
+               Grid.Row="0"
+               FontSize="40"
+               TextColor="{Binding Text_color}"
+               FontAttributes="Bold"
+               Margin="0,10,0,0"
+               HorizontalOptions="Center" />
+        <Frame VerticalOptions="Center"
+               Margin="20"
+               BackgroundColor="{Binding Back_color2}"
+               CornerRadius="20"
+               HasShadow="False"
+               HorizontalOptions="Center"
+               Grid.Row="1">
+            <StackLayout VerticalOptions="Center"
+                         Padding="5,-35,5,0">
+                <!-- Nombre de Usuario -->
+                <Label x:Name="etiq_bienv"
+                       Text="{Binding Etiq_texto}"
+                       FontSize="30"
+                       TextColor="{Binding Text_color2}"
+                       FontAttributes="Bold"
+                       Margin="0,20,0,0"
+                       HorizontalOptions="Center"    
+                       HorizontalTextAlignment="Center"
+                       IsVisible="true" />
+                <!-- Etiqueta "Ya estás logueado como" -->
+                <Label x:Name="etiq_logcomo"
+                       Text="Ya estás logueado como"
+                       FontSize="25"
+                       TextColor="{Binding Text_color4}"
+                       FontAttributes="Bold"
+                       Padding="0,20,0,0"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       IsVisible="false" />
+                <!-- Imagen -->
+                <Image x:Name="imgReg"
+                       Source="EasyShop_FTransparente.png"
+                       WidthRequest="135"
+                       HeightRequest="135"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center" />
+                <!-- Entrada de Usuario -->
+                <Frame x:Name="frmusuario"
+                       BorderColor="{Binding Border_color}"
+                       BackgroundColor="{Binding Back_color2}"
+                       CornerRadius="5"
+                       Padding="5">
+                    <Entry Placeholder="{Binding Placetxt}"
+                           PlaceholderColor="{Binding Place_color}"
+                           TextColor="{Binding Text_color3}"
+                           BackgroundColor="{Binding Back_color2}"
+                           MaxLength="50"
+                           x:Name="txtusuario"
+                           IsVisible="true" />
+                </Frame>
+                <!-- Entrada de Contraseña -->
+                <Frame x:Name="frmcontrasenia"
+                       BorderColor="{Binding Border_color}"
+                       BackgroundColor="{Binding Back_color2}"
+                       CornerRadius="5"
+                       Padding="5">
+                    <Entry IsPassword="True"
+                           Placeholder="Contraseña"
+                           PlaceholderColor="{Binding Place_color}"
+                           TextColor="{Binding Text_color3}"
+                           BackgroundColor="{Binding Back_color2}"
+                           MaxLength="50"
+                           x:Name="txtcontrasenia"
+                           IsVisible="true" />
+                </Frame>
+                <!-- Botones -->
+                <Button Text="{Binding Etiq_texto2}"
+                        TextColor="{Binding Text_color}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Margin="0,5,0,0"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_color}"
+                        x:Name="btningresar"
+                        Clicked="Btnregistrar_Clicked"
+                        IsVisible="true" />
+                <Button Text="{Binding Etiq_texto4}"
+                        TextColor="{Binding Text_color}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Margin="0,5,0,0"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_color}"
+                        x:Name="btninvitado"
+                        Clicked="Btninvitado_Clicked"
+                        IsVisible="true" />
+                <Button Text="{Binding Etiq_texto5}"
+                        TextColor="{Binding Text_color}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Margin="0,10,0,0"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_color}"
+                        x:Name="btncrearcuenta"
+                        IsVisible="false" />
+                <Button Text="{Binding Etiq_texto4}"
+                        TextColor="{Binding Text_color}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Padding="0,10,0,10"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_color}"
+                        x:Name="btncontinvitado"
+                        Clicked="Btncontinvitado_Clicked"
+                        IsVisible="false" />
+                <Button Text="{Binding Etiq_texto6}"
+                        TextColor="{Binding Text_color}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Margin="0,10,0,0"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_color}"
+                        x:Name="btnregresarR"
+                        Clicked="BtnregresarR_Clicked"
+                        IsVisible="false" />
+            </StackLayout>
+        </Frame>
+    </Grid>
+
+
+    <!--<StackLayout BackgroundColor="{Binding ColorAcentuacionR}"
+                 Orientation="Vertical">
+
+        <Label Text="{Binding Etiq_texto3}"
+               FontSize="40"
+               TextColor="{Binding Text_color}"
+               FontAttributes="Bold"
+               Margin="0,20,0,0"
+               HorizontalOptions="Center" />
+        <Frame VerticalOptions="Center"
+               Margin="20"
+               BackgroundColor="{Binding Back_color2}"
+               CornerRadius="20"
+               HasShadow="False"
+               HorizontalOptions="Center">
+            <StackLayout VerticalOptions="Center">
+                <Label x:Name="etiq_bienv" Text="{Binding Etiq_texto}"
+                       FontSize="35"
+                       TextColor="{Binding Text_color2}"
+                       FontAttributes="Bold"
+                       Margin="0,20,0,0"
+                       HorizontalOptions="Center"
+                       IsVisible="true"/>
+                <Label x:Name="etiq_logcomo"
+                       Text="Ya estas logueado como"
+                       FontSize="25"
+                       TextColor="{Binding Text_color4}"
+                       FontAttributes="Bold"
+                       Margin="0,20,0,0"
+                       HorizontalOptions="Center"
+                       IsVisible="false"/>
+                <Image x:Name="imgReg"
+                       Source="EasyShop_FTransparente.png"
+                       Margin="20"
+                       WidthRequest="135"
+                       HeightRequest="135"
+                       Aspect="AspectFit"></Image>
+                <Frame x:Name="frmusuario" BorderColor="{Binding Border_color}"
+                       BackgroundColor="{Binding Back_color2}"
+                       CornerRadius="5"
+                       Padding="5">
+                    <Entry Placeholder="{Binding Placetxt}"
+                           PlaceholderColor="{Binding Place_color}"
+                           TextColor="{Binding Text_color3}"
+                           BackgroundColor="{Binding Back_color2}"
+                           MaxLength="50"
+                           x:Name="txtusuario"
+                           IsVisible="true"/>
+                </Frame>
+                <Frame x:Name="frmcontrasenia" BorderColor="{Binding Border_color}"
+                       BackgroundColor="{Binding Back_color2}"
+                       CornerRadius="5"
+                       Padding="5">
+                    <Entry IsPassword="True"
+                           Placeholder="Contraseña"
+                           PlaceholderColor="{Binding Place_color}"
+                           TextColor="{Binding Text_color3}"
+                           BackgroundColor="{Binding Back_color2}"
+                           MaxLength="50"
+                           x:Name="txtcontrasenia" 
+                           IsVisible="true" />
+                </Frame>
+                <Button Text="{Binding Etiq_texto2}"
+                        TextColor="{Binding Text_color}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Margin="0,20,0,0"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_color}"
+                        x:Name="btningresar"
+                        Clicked="Btnregistrar_Clicked"
+                        IsVisible="true"></Button>
+                <Button Text="{Binding Etiq_texto4}"
+                        TextColor="{Binding Text_color}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Margin="0,10,0,0"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_color}"
+                        x:Name="btninvitado"
+                        Clicked="Btninvitado_Clicked"
+                        IsVisible="true"></Button>
+                <Button Text="{Binding Etiq_texto5}"
+                        TextColor="{Binding Text_color}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Margin="0,10,0,0"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_color}"
+                        x:Name="btncrearcuenta"
+                        IsVisible="false"></Button>
+                <Button Text="{Binding Etiq_texto4}"
+                        TextColor="{Binding Text_color}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Margin="0,10,0,0"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_color}"
+                        x:Name="btncontinvitado"
+                        Clicked="Btncontinvitado_Clicked"
+                        IsVisible="false"></Button>
+
+                <Button Text="{Binding Etiq_texto6}"
+                        TextColor="{Binding Text_color}"
+                        CornerRadius="5"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Margin="0,10,0,0"
+                        TextTransform="None"
+                        BackgroundColor="{Binding Back_color}"
+                        x:Name="btnregresarR"
+                        Clicked="BtnregresarR_Clicked"
+                        IsVisible="false"></Button>
+            </StackLayout>
+        </Frame>
+    </StackLayout>-->
+
+</ContentPage>

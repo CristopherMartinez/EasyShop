@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Models="clr-namespace:EasyShop.Models" 
+             xmlns:viewmodels="clr-namespace:EasyShop.ViewModels" 
+             x:DataType="viewmodels:JuguetesViewModel"
+             x:Class="EasyShop.Views.Juguetes"
+             BackgroundColor="#af9eca"
+             Title="Juguetes">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="carritoCompras.png" Clicked="ToolbarItem_Clicked" Order="Primary" />
+        <ToolbarItem Text="{Binding Contador}" Priority="0" Order="Primary" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+
+        <CollectionView ItemsSource="{Binding Juguetes}">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="Models:Producto">
+                    <StackLayout>
+                        <Frame CornerRadius="10" Margin="10" HeightRequest="455">
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <StackLayout Grid.Row="0" HorizontalOptions="Center" Spacing="5">
+                                    <Label Text="{Binding nombre}" TextColor="Black" FontAttributes="Bold" FontSize="Title" />
+                                    <Label Text="{Binding descripcion}" TextColor="Black" FontSize="Subtitle" />
+                                </StackLayout>
+
+                                <Frame Grid.Row="1" CornerRadius="10" HasShadow="False">
+                                    <Image Source="{Binding imagen}" BackgroundColor="White" Aspect="AspectFit"/>
+                                </Frame>
+
+                                <Label Grid.Row="2" TextType="Html">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Cantidad disponible: " TextColor="Black" FontSize="Small" />
+                                            <Span Text="{Binding cantidadDisponible}" TextColor="Black" FontAttributes="Bold" FontSize="Small" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <Label Grid.Row="3" Text="{Binding precio, StringFormat='${0}'}" TextColor="Black" FontAttributes="Bold" FontSize="Title"></Label>
+
+                                <!--CANTIDAD A COMPRAR-->
+                                <Label Grid.Row="4" Text="Ingresa cantidad comprar:" FontSize="12"></Label>
+                                <Entry Grid.Row="5" Text="{Binding Cantidad}" Keyboard="Numeric" IsTextPredictionEnabled="false"></Entry>
+
+
+                                <Button Grid.Row="6" 
+                                Text="Agregar" 
+                                Margin="0" 
+                                HorizontalOptions="FillAndExpand" 
+                                BackgroundColor="#845EC2" 
+                                TextColor="White" 
+                                Clicked="Button_Clicked"/>
+                             </Grid>
+                        </Frame>
+                    </StackLayout>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+    </ContentPage.Content>
+</ContentPage>
